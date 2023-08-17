@@ -72,7 +72,7 @@ do
 		## [ $((sec % n)) -eq m ] && udpate_item
 		[ $((sec % 5 )) -eq 0 ] && update_time 	# update time every 5 seconds
 		[ $((sec % 5 )) -eq 0 ] && update_vol # update time every 5 seconds
-		[ $((sec % 60)) -eq 0 ] && update_bat
+		#[ $((sec % 60)) -eq 0 ] && update_bat
 		[ $((sec % 5 )) -eq 0 ] && display
 		sec=$((sec + 1))
 	}
