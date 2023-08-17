@@ -32,8 +32,8 @@ static const char *const autostart[] = {
   	"lxpolkit", NULL,
   	"dunst", NULL,
 	"picom", NULL,
-  	"sh", "-c", "$HOME/dwm-levyian/scripts/status", NULL,
-  	"sh", "-c", "$HOME/dwm-levyian/scripts/dbus", NULL,
+  	"sh", "-c", "$HOME/GitHub/dwm-levyian/scripts/status", NULL,
+  	"sh", "-c", "$HOME/GitHub/dwm-levyian/scripts/dbus", NULL,
   	"feh", "--bg-max", "$HOME/Pictures/background.jpg", NULL,
 	NULL /* terminate */
 };
@@ -85,14 +85,14 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "rofi", "-modes", "run,drun,ssh", "-show", "drun", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_x,      spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      spawn,          SHCMD ("brave")},
+	{ MODKEY,                       XK_b,      spawn,          SHCMD ("firefox")},
 	{ MODKEY,                       XK_p,      spawn,          SHCMD ("flameshot full -p $HOME/SynologyDrive/Screenshots/")},
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD ("flameshot gui -p $HOME/SynologyDrive/Screenshots/")},
 	{ MODKEY|ControlMask,           XK_p,      spawn,          SHCMD ("flameshot gui --clipboard")},
